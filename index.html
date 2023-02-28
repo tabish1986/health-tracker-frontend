@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Health Watch</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo-sm.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/custom/css/loginform.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+ 
+</head>
+
+<body> 
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <span class="logo me-auto" style="color: #47aeff; cursor: pointer;" onclick="window.location.href='index.html'"><img src="assets/img/logo.png" alt="Italian Trulli"></span>
+      <a class="get-started-btn" style="background-color: #47aeff; cursor: pointer; font-weight: bold;" onclick="showLoginform()" >Login <img src="assets/img/unlock.png" style="height: 20px; width: 20px;"></a>
+    </div>
+  </header>
+    
+  <section id="hero" class="d-flex justify-content-center align-items-center" style="height: 100%;">
+    
+    <div id="bannertext" class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Statistical eye<br>to your health records</h1>
+      <h2>Feed data and let us generate statistics for you</h2>
+      <a class="btn-get-started" onclick="showSignUpform()" style="cursor: pointer; font-weight: bold;">Sign Up</a>
+    </div>    
+
+    <div id="loginformdiv" class="container position-relative" data-aos="zoom-in" data-aos-delay="100" style="display:none;">
+      <div class="wrapper fadeInDown">
+        <form id="formContent" class="needs-validation signInClass" novalidate>
+          <div class="alert alert-primary" role="alert" style="text-align: center;">
+            <img src="assets/img/unlock.png" style="height: 40px; width: 40px;" id="loginIcon">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="loginSpinner" style="display: none;"></span>
+          </div>
+          <div class="m-4">
+            <form id="login" class="needs-validation" novalidate>
+                <div class="mb-2" style="text-align: center; background-color:#dbe7f0; color: rgb(0, 110, 174); font-size:small; font-weight:600; display: none;" id="loginError">
+                    <label>Unable to login</label>
+                </div>
+                <div class="form-group mb-2">
+                    <label class="form-label" for="inputUsername" >Username</label>
+                    <input id="inputUsername" class="form-control" maxlength="20" required onkeypress="return /[0-9a-zA-Z\-_.]/i.test(event.key)">
+                </div>
+                <div class="form-group mb-2">
+                    <label class="form-label" for="inputPassword">Password</label>
+                    <input id="inputPassword" class="form-control" type="password" maxlength="20" required onkeypress="return /[0-9a-zA-Z \@%!#$?-_.]/i.test(event.key)">
+                </div>               
+                <button type="submit" id="btnlogin" class="btn btn-primary" style="margin-right: 5px;">Login </button>
+                <a style="color: #5578ff;" href="#" onclick="showForgotPasswordForm()"><u>Forgot Password</u></a><a style="color: #5578ff;" href="#" onclick="showSignUpform()"> | <u>Sign Up</u></a>
+            </form>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="signUpformdiv" class="container position-relative" data-aos="zoom-in" data-aos-delay="100" style="display:none; margin-top: -70px;">
+      <div class="wrapper fadeInDown">
+        <form id="formContent" class="needs-validation signUpClass" novalidate>
+          <div class="alert alert-primary" role="alert" style="text-align: center;">
+            <img src="assets/img/signup.png" style="height: 40px; width: 40px;" id="signupIcon">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="signUpSpinner" style="display: none;"></span>
+          </div>
+          <div class="m-4">
+            <form id="signUp" class="needs-validation" novalidate>
+                <div class="mb-2" style="text-align: center; background-color:#dbe7f0; color: rgb(0, 110, 174); font-size:small; font-weight:600; display: none;" id="signUpError">
+                    <label>Unable to Sign Up</label>
+                </div>                
+                <!--<div class="mb-2" style="text-align: center;">
+                    <label style="text-align: center; color: red; font-size:small; display: none;" id="signUpError">Unable to Signup</label>
+                </div>-->
+                <div class="mb-2" id="divName">
+                    <label class="form-label" for="inputName">Name</label>
+                    <input class="form-control" id="inputName" required  maxlength="20" onkeypress="return /[a-z A-Z]/i.test(event.key)">
+                </div>
+                <!--<div class="mb-2" id="divEmail">
+                    <label class="form-label" for="inputEmail">Email address</label>
+                    <input class="form-control" id="inputEmail" required>
+                </div>-->      
+                <div class="mb-2" id="divMobNo">
+                  <label class="form-label" for="inputMobNo">Mobile Number</label>
+                  <input class="form-control" id="inputMobNo" required maxlength="13" onkeypress="return /[0-9\+]/i.test(event.key)">
+                  <label class="form-label" for="inputMobNo" style="font-size:x-small; color: rgb(18, 142, 105);">+ XX XXXXXX</label>
+              </div> 
+              <div class="mb-2" id="divUserId">
+                <label class="form-label" for="inputUserId">Preferred Username</label>                
+                <input class="form-control" id="inputUserId" required maxlength="20" required onkeypress="return /[0-9a-zA-Z\-_.]/i.test(event.key)">
+                <label class="form-label" for="inputUserId" style="font-size:x-small; color: rgb(18, 142, 105);">Min 5 length</label>
+            </div> 
+            <div class="mb-2" id="divPassword">
+              <label class="form-label" for="inputPrePassword">Preferred Password</label>              
+              <input type="password" class="form-control" id="inputPrePassword" required maxlength="20" required onkeypress="return /[0-9a-zA-Z \@%!#$?-_.]/i.test(event.key)">
+              <label class="form-label" for="inputPrePassword" style="font-size:x-small; color: rgb(18, 142, 105);">Min 8 Length ( 1 Upper Case, 1 Digit, 1 Special character @ % ! # $ ? - _ . )</label>
+            </div>
+            <div class="mb-2" id="divRetypePassword">
+              <label class="form-label" for="inputRetypePassword">Confirm Password</label>
+              <input type="password" class="form-control" id="inputRetypePassword" required maxlength="20" required onkeypress="return /[0-9a-zA-Z \@%!#$?-_.]/i.test(event.key)">
+            </div>
+            <div class="mb-2" id="divOTP" style="display:none;">
+              <label class="form-label" for="inputOTP" style="color: #5578ff;">Enter OTP sent to your mobile number</label>
+              <input type="password" class="form-control" id="inputOTP" value="" maxlength="5" onkeypress="return /[0-9]/i.test(event.key)">
+              <label style="font-size: x-small; color: rgb(18, 142, 105);">Note: It can take upto 3 minutes for the OTP to be recieved</label>
+            </div>
+            <div class="form-check" id="divAgreement">
+              <input type="checkbox" class="form-check-input" id="cbox">
+              <label class="form-check-label" for="exampleCheck1" onclick="showTermsAndConditions()" style="cursor:pointer;">I agree to the <u>Terms & Conditions</u></label>
+            </div>
+            <div class="mb-2">
+              <button type="submit" id="btnSubmit" class="btn btn-primary">
+                <span class="sr-only">Sign Up</span>
+                
+              </button>             
+            </div>
+            </form>
+        </div>        
+        </form>
+      </div>
+    </div>
+
+    <div id="forgotpasswordformdiv" class="container position-relative" data-aos="zoom-in" data-aos-delay="100" style="display:none;">
+      <div class="wrapper fadeInDown">
+        <form id="formContent" class="needs-validation forgotPwdClass" novalidate>
+          <div class="alert alert-primary" role="alert" style="text-align: center;">
+            <img src="assets/img/forgot-password.png" style="height: 40px; width: 40px;" id="signupIcon">
+          </div>
+          <div class="m-4">
+            <div class="mb-2" style="text-align: center; background-color:#dbe7f0; color: rgb(0, 110, 174); font-size:small; font-weight:600; display: none;" id="pwdResetError">
+              <label>Unable to reset password</label>
+            </div>            
+            <form id="forgotPassword" class="needs-validation" novalidate>
+                <div class="form-group mb-2" id="divResetPwd_UserName">
+                    <label class="form-label" for="inputPwdResetUsername">Username</label>
+                    <input id="inputPwdResetUsername" class="form-control" maxlength="20" required>
+                </div>
+                <div class="form-group mb-2" id="divResetPwd_OTP" style="display: none;">
+                    <label style="text-align: left; padding-bottom: 10px;; color:#5578ff; display:block; font-size: small;" id="loginError">Enter the OTP sent to your registered mobile number</label>
+                    <label class="form-label" for="inputPwdResetOTP">OTP</label>
+                    <input id="inputPwdResetOTP" class="form-control" type="password" maxlength="5">
+                </div>               
+                <button type="submit" id="btnResetPassword" class="btn btn-primary">Reset Password</button>                
+            </form>
+        </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 style="color: #5578ff;">Blood Pressure, Glucose, Pulse & Respiration Monitoring</h3>
+            <p class="fst-italic">
+              Easy to use and powerful tools to monitor & manage your health records
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Instant summary based on most recent records</li>
+              <li><i class="bi bi-check-circle"></i> Graphical & tabular view of health records</li>
+              <li><i class="bi bi-check-circle"></i> Easy to add, update and delete records</li>
+            </ul>
+            <p>
+              Feed data and we generate statistics to help you keep a close eye on your health records
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/img/report.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3 style="color: #5578ff;">Printable Reports</h3>
+            <p class="fst-italic">
+              Planning to visit your GP ? Hit the print report option and get a printable version of your health statistics
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Basic health data</li>
+              <li><i class="bi bi-check-circle"></i> Summarized graph generated from recent data</li>
+              <li><i class="bi bi-check-circle"></i> Summarized tabular health records from recent data</li>
+            </ul>
+            <p>
+              Assist your doctor in getting a clear picture of your ongoing health to get better diagnosis and prescription 
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    
+
+    
+
+    
+
+   
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+   
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>University of Derby</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">          
+          Designed & developed by <strong>Tabish & Pragati</strong> | Contact Us: <a href="mailto:tabish.hb@gmail.com">100607246@unimail.derby.ac.uk</a>
+        </div>
+      </div>
+      
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="assets/custom/js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      validationHandler();
+    });
+
+    function validationHandler()
+    {
+      'use strict';
+        //window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {                
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              else
+              {                
+                event.preventDefault();
+                if (event.submitter.id == 'btnlogin')
+                {
+                  authenticate();
+                }
+                else if (event.submitter.id == 'btnResetPassword')
+                {                  
+                  resetPassword();
+                }
+                else
+                {
+                  if ($('#cbox').prop( "checked") == true)
+                  {
+                    if (signUpValidations() == true)
+                      signUp();
+                  }                    
+                  else
+                    alert('Please accept terms & conditions to continue');
+                }
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        //}, false);
+    }
+    function showOTPView()
+    {      
+      $('#signUpError').hide();
+      $('#divName').hide();
+      $('#divEmail').hide();
+      $('#divMobNo').hide();
+      $('#divUserId').hide();
+      $('#divPassword').hide();
+      $('#divRetypePassword').hide();
+      $('#divAgreement').hide();      
+      $('#divOTP').show();
+    }
+
+    function showLoginform()
+    { 
+      $('#loginError').hide();
+      $('#inputUsername').val('');
+      $('#inputPassword').val('');
+      
+      $("#bannertext").hide();
+      $("#signUpformdiv").hide();
+      $("#forgotpasswordformdiv").hide();
+      $("#loginformdiv").show();
+      
+      $('.signInClass').removeClass("was-validated");
+    }
+    function showForgotPasswordForm()
+    {
+      $("#bannertext").hide();
+      $("#signUpformdiv").hide();
+      $("#loginformdiv").hide();
+      
+      $("#forgotpasswordformdiv").show();
+      $("#pwdResetError").hide();
+      $("#inputPwdResetUsername").show();
+      $("#divResetPwd_OTP").hide();
+
+      $('.forgotPwdClass').removeClass("was-validated");
+    }
+    function login()
+    {
+      sessionStorage.setItem('seession_token', 'bearer tabish.hb:tpstps_1');
+      sessionStorage.setItem('session_userid', 'tabish.hb');
+      //window.sessionStorage.getItem("session_userid");
+      //sessionStorage.clear();
+
+      window.location.href='summary-dashboard.html';
+    }
+    function signUpValidations()
+    {
+      if ($('#inputPrePassword').val() != $('#inputRetypePassword').val())
+      {          
+        $('#signUpError').text('Password & confirm password do not match');
+        $('#signUpError').show();
+        return false;
+      }      
+
+      if ($('#inputUserId').val().length < 5)
+      {          
+        $('#signUpError').text('Username should be atleast 5 characters');
+        $('#signUpError').show();
+        return false;
+      }      
+      
+      var regix = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+      var regixResult = regix.test($('#inputPrePassword').val());
+
+      if (regixResult == false)
+      {
+        $('#signUpError').text('Password must meet the required criteria');
+        $('#signUpError').show();
+        return false;
+      }
+
+      var regexMobNo = /^\+(?:[0-9] ?){11}[0-9]$/;
+      var regexMobNoResult = regexMobNo.test($('#inputMobNo').val());
+      if (regexMobNoResult == false)
+      {
+        $('#signUpError').text('Mobile Number must meet the required criteria');
+        $('#signUpError').show();
+        return false;
+      }
+
+      return true;
+    }
+
+    function signUp()
+    {
+      var name= $('#inputName').val();
+      var email= '';  //$('#inputEmail').val();
+      var mobNo= $('#inputMobNo').val();
+      var userId= $('#inputUserId').val();
+      var password= $('#inputPrePassword').val();
+      var otp = $('#inputOTP').val();
+
+      data = {
+        OTP: otp,
+        Name: name,
+        Email: email,
+        MobNo: mobNo,
+        PreferredUserId: userId,
+        PreferredPassword: password,
+      }      
+      
+      $('#signupIcon').hide();
+      $('#signUpSpinner').show();
+
+      setTimeout(function() {     
+
+      $.ajax({
+            type:"POST",
+            url:"http://localhost:8081/api/v1/users/signup",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function(response){
+              
+              $('#signUpSpinner').hide();
+              $('#signupIcon').show();
+              
+              console.log(response.responseCode);
+              console.log(response.responseValue);
+
+              //OTP Sent
+              if (response.responseCode == '1')
+              {
+                showOTPView();
+              }
+              else if (response.responseCode == '2') //Sign Up success
+              {
+                //location.reload();                    
+                showLoginform();
+                $('#loginError').text('Congratulations ! You can now login using your credentials');
+                $('#loginError').show();
+              }
+              else //Username not available or Invalid OTP
+              {
+                var errorMessage = response.responseValue;
+                $('#signUpError').text(errorMessage);
+                $('#signUpError').show();
+              }
+            },
+            error: function (response){
+                alert('Technical Error: Unable to Login');
+            }
+        });
+
+      }, 2000);
+    }
+    function resetPassword()
+    {
+      var username = $('#inputPwdResetUsername').val();
+      var otp = $('#inputPwdResetOTP').val();
+
+      data = {
+        UserId: username,
+        OTP: otp
+      }
+
+      $.ajax({
+            type:"POST",
+            url:"http://localhost:8081/api/v1/users/resetPassword",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function(response){
+              if (response.responseCode == '1')
+              {
+                $('#pwdResetError').hide();
+                $('#divResetPwd_UserName').hide();
+                $('#divResetPwd_OTP').show();
+              }
+              else if (response.responseCode == '2')
+              {
+                $('#divResetPwd_OTP').hide();
+                var errorMessage = response.responseValue;
+                $('#pwdResetError').text(errorMessage);
+                $('#pwdResetError').show();
+                $('#btnResetPassword').hide();
+              }
+              else
+              {
+                var errorMessage = response.responseValue;
+                $('#pwdResetError').text(errorMessage);
+                $('#pwdResetError').show();
+              }               
+            },
+            error: function (response){
+                alert('Technical Error: Unable to Login');
+            }
+        });
+    }
+    function authenticate()
+    {
+
+      var userName = $('#inputUsername').val();
+      var password = $('#inputPassword').val();
+
+      var data = {
+        UserId: userName,
+        Password: password,
+        OTP:'1234'
+      };
+      
+      $('#loginIcon').hide();
+      $('#loginSpinner').show();
+
+      setTimeout(function() {
+
+      $.ajax({
+            type:"POST",
+            url:"http://localhost:8081/api/v1/authentication",
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function(response){
+                
+              $('#loginIcon').show();
+              $('#loginSpinner').hide();
+
+              if (response.responseCode == '1')
+                  {                    
+                    var response = response.responseValue.split(',');
+                    var token = response[0];
+                    var name = response[1];
+                    
+                    sessionStorage.setItem('session_userid', userName);
+                    sessionStorage.setItem('seession_token', token);
+                    sessionStorage.setItem('seession_name', name);
+                    
+                    if (userName == 'admin.joseph')
+                      window.location.href='admin-configuration.html';
+                    else
+                      window.location.href='summary-dashboard.html';
+                  }
+                  else
+                  {
+                    /*sessionStorage.setItem('seession_token', response.responseValue);
+                    window.location.href='summary-dashboard.html';*/
+                    
+                    var errorMessage = response.responseValue;
+                    $('#loginError').text(errorMessage);
+                    $('#loginError').show();
+                  }                
+            },
+            error: function (response){
+                alert('Technical Error: Unable to Login');
+            }
+        });
+
+      }, 2000);
+    }
+    function showSignUpform()
+    {
+      $('#inputName').val('');
+      $('#inputMobNo').val('');
+      $('#inputUserId').val('');
+      $('#inputPrePassword').val('');
+      $('#inputRetypePassword').val('');
+      $('#inputOTP').val('');
+      $('#cbox').prop('checked',false);
+
+      $('#signUpError').hide();
+      $('#divName').show();
+      $('#divEmail').show();
+      $('#divMobNo').show();
+      $('#divUserId').show();
+      $('#divPassword').show();
+      $('#divRetypePassword').show();
+      $('#divAgreement').show();      
+      $('#divOTP').hide();
+
+      $("#bannertext").hide();
+      $("#loginformdiv").hide();
+      $("#forgotpasswordformdiv").hide();
+      $("#signUpformdiv").show();
+
+      //reset validation      
+      $('.signUpClass').removeClass("was-validated");      
+    }
+    function showTermsAndConditions()
+    {
+      alert('TERMS AND CONDITIONS\n\n1. This system is not approved by any medical authority.\n\n2. The onus of the correctnees of medical readings fed into the system is on the user. \n\n3. This system is not capable of identifying the correctness of method used in recording the readings.\n\n4. Please seek medical help in case of health condition rather than relying on this sytem.');
+    }
+  </script>
+
+</body>
+
+</html>

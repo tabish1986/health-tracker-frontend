@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Health Watch</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />    
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">    
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">    
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+</head>
+<style>
+.scroll {
+  height:150px;
+  overflow-y: scroll;
+}
+</style>
+<body style="overflow: hidden;">     
+  
+    <div class="preloader" >
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>   
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin4" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">      
+        
+        <header class="topbar" data-navbarbg="skin5" style="height: 0px;">           
+
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                
+                <div class="navbar-header" data-logobg="skin6">                  
+                    <a class="navbar-brand" href="glucose-dashboard.html" >                        
+                        <b class="logo-icon">                            
+                            <img src="plugins/images/logo-icon.png" alt="homepage" />
+                        </b>                       
+                        <span class="logo-text">                            
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
+                    </a>                   
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>                
+            </nav>
+        </header>
+       
+        <aside class="left-sidebar" data-sidebarbg="skin6">            
+            <div class="scroll-sidebar">               
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item pt-2" style="margin-bottom: 5px;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link">
+                                <i class="fas fa-user-circle" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: cornflowerblue; font-size:medium; color: rgb(40, 206, 128); " id="userTitle">Welcome, User</span>
+                            </a>
+                        </li>                       
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="summary-dashboard.html"
+                                aria-expanded="false">
+                                <i class="fas fa-th-large" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color:black; font-size:medium; ">Summary Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="bloodpressure-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium;">BP Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" style="background-color: rgba(179, 213, 243, 0.846);">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="glucose-dashboard.html.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; font-weight: bold;">Glucose Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pulse-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Pulse Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="respiration-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Respiration Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                                aria-expanded="false">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Profile</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="changePassword.html"
+                                aria-expanded="false">
+                                <i class="fas fa-edit" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium;">Change Password</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" data-toggle='modal' data-target='#logoutModal' type="button">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium;">Logout</span>
+                            </a>
+                        </li>                                                            
+                    </ul>
+
+                </nav>                
+            </div>            
+        </aside>
+        
+        <div class="page-wrapper">
+            
+            <div class="page-breadcrumb" style="background-color: rgba(191, 218, 241, 0.572);">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Glucose Dashboard</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <ol class="breadcrumb ms-auto">
+                                <li></li>
+                            </ol>                           
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            
+            <div class="container-fluid scroll" style="height: 680px;">                
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title" style="color: rgb(34, 194, 238);">Latest Reading Date</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    
+                                    <img src="assets/img/icons-calendar-30.png" />
+                                    
+                                </li>
+                                <li class="ms-auto"><span class="counter" id="lastReadingDate">last reading</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title" style="color: rgb(34, 194, 238);">Latest Reading</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <img src="assets/img/icon-reading-30.png" />
+                                </li>
+                                <li class="ms-auto"><span class="counter" id="lastReading">highest reading</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title" style="color: rgb(34, 194, 238);">Latest Reading Meal</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                                <li>
+                                    <img src="assets/img/icons8-meal-30.png" />
+                                </li>
+                                <li class="ms-auto"><span class="counter" id="lastReadingMeal">lowest reading</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="white-box">
+                            <h3 class="box-title" style="float: left;">Average Glucose Trend (mg/dl)</h3>                           
+
+                            <div style="margin-left: 10%; height:60%; width:80%;">
+                                <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                                <span id="alertMessage"><strong>Message</strong></span>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <button type="button" data-toggle='modal' data-target='#readingsModal' class="btn btn-success btn-sm" style="margin-bottom: 1%;" onclick="clearGlucoseForm('add')">Add Reading</button>
+                            <button type="button" class="btn btn-success btn-sm" style="margin-bottom: 1%;" onclick="window.open('glucose-report.html','popUpWindow','height=1000,width=1500,left=10,top=10,,scrollbars=yes,menubar=no'); return false;" >Generate Report</button>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-sm table-hover" id="tblGlucose" cellspacing="0" width="99%">
+                                    <thead>
+                                        <tr>
+                                            <th class="th-sm" data-field="ID" style="display: none;">ID</th>
+                                            <th class="th-sm" data-field="SNO">S.No</th>
+                                            <th class="th-sm" data-field="READING_DATE">Date</th>
+                                            <th class="th-sm" data-field="READING_TIME">Time</th>
+                                            <th class="th-sm" data-field="READING">Reading</th>
+                                            <th class="th-sm" data-field="TYPE">Type</th>
+                                            <th class="th-sm" data-field="DEVICE">Device</th>
+                                            <th class="th-sm" data-field="LASTMEAL">Last Meal</th>
+                                            <th class="th-sm" data-field="LASTMEALTIME">Meal Time</th>
+                                            <th data-field="Action">Action</th>                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+                
+            </div>
+           
+            
+           
+        </div>       
+    </div>   
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>    
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>    
+    <script src="js/waves.js"></script>    
+    <script src="js/sidebarmenu.js"></script>    
+    <script src="js/custom.js"></script>    
+    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>    
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type= "text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script type= "text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
+    <script src="js/logout.js"></script>
+
+    <script>
+        $(function () {
+            loadUserTitle();
+            loadGlucoseTable();
+        });
+        
+        (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          var forms = document.getElementsByClassName('needs-validation');
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              else
+              {
+                event.preventDefault();
+                saveGlucoseData();                
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+        $(document).ready(function() {
+
+            setBPSummaryStatus();            
+            createBarChart();            
+            $('#inputDate').datepicker({                
+                format: 'dd-M-yy',
+                endDate: '+0d',
+                autoclose: true
+            })           
+            
+        });
+    
+    var session_userId = window.sessionStorage.getItem("session_userid");
+    var session_token = "Bearer " + window.sessionStorage.getItem("seession_token");
+        
+    function loadUserTitle()
+    {
+        $('#userTitle').text("Welcome, " + window.sessionStorage.getItem("seession_name"));
+    }
+    function setBPSummaryStatus(lastReadingDate, lastReading, lastMeal) {
+
+        $("#lastReadingDate").text(lastReadingDate);
+        $("#lastReading").text(lastReading);
+        $("#lastReadingMeal").text(lastMeal);
+
+    }    
+    function createBarChart() {
+
+        $.ajax({
+            type: "GET",
+            beforeSend: function(request){
+                request.setRequestHeader("Authorization",session_token);
+            },
+            url: "http://localhost:8081/api/v1/users/" + session_userId + "/glucose/graphStats",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function (response) {
+
+                var xDays = response.XAxis;
+                var yFasting = response.YAxis_FASTING;
+                var yRandom= response.YAXIS_RANDOM;
+
+                new Chart("myChart", {
+                type: "bar",
+                data: {
+                        labels: xDays,            
+                        datasets: 
+                        [
+                        {
+                        label: 'Fasting',
+                        data: yFasting,
+                        backgroundColor: "grey",
+                        fill: false
+                        },
+                        {
+                        label: 'Random',
+                        data: yRandom,
+                        backgroundColor: "orange",
+                        fill: false
+                        }
+                        ]
+                },
+                options: {
+                    legend: {display: true}
+                }
+                });
+                
+            },
+            error: function (response) {/*
+                var r = jQuery.parseJSON(response.responseText);
+                alert("Message: " + r.Message);*/
+            }
+        });
+    }
+    function deleteSelectedBPTableRow()
+    {
+        $.ajax({
+            type:"PATCH",
+            beforeSend: function(request){
+                request.setRequestHeader("Authorization",session_token);
+            },
+            url:"http://localhost:8081/api/v1/users/" + session_userId + "/glucose/readings/" + $("#selectedRowId").text(),
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function(response){                
+                
+                setTimeout(function (){
+                    $('#tblGlucose').DataTable().destroy();
+                    $("#tblGlucose tbody").empty();                    
+                    loadGlucoseTable();
+                    createBarChart();
+                    $("#alertMessage").text('Record deleted successfully.');
+                    $(".alert").css("display","block");
+                }, 0000);
+            },
+            error: function (response){
+                alert('Technical Error: Unable to delete');
+            }
+
+        });
+    }
+    function setSelectedRowId(rowId)
+    {       
+        $("#selectedRowId").text(rowId);
+    }
+    function loadGlucoseTable()
+    {
+        $.ajax({
+            type: "GET",
+            beforeSend: function(request){
+                request.setRequestHeader("Authorization",session_token);
+            },
+            url: "http://localhost:8081/api/v1/users/" + session_userId + "/glucose/readings/-1",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function (response) {  
+                
+                setBPSummaryStatus(response[0].READING_DATE,response[0].READING + " mg/dl, " + response[0].TYPE,response[0].LASTMEAL);
+            
+                $.each(response , function(index, val) {                    
+                    var tblBPRow='';
+                    tblBPRow += "<tr>" +
+                                "<td style='display: none;''>" + val.ID + "</td>" + 
+                                "<td>" + val.SNO + "</td>" + 
+                                "<td>" + val.READING_DATE +"</td>" + 
+                                "<td>" + val.READING_TIME + "</td>" +
+                                "<td>" + val.READING + "</td>" +
+                                "<td>" + val.TYPE + "</td>" +
+                                "<td>" + val.DEVICE + "</td>" +
+                                "<td>" + val.LASTMEAL + "</td>" +
+                                "<td>" + val.LASTMEALTIME + "</td>" +                                
+                                "<td><button data-toggle='modal' data-target='#myModal' class='btn btn-outline-danger btn-sm' type='button' data-placement='top' title='Delete' onclick='setSelectedRowId(" + val.ID + ")'><i class='fa fa-trash'></i></button>" +
+                                "<span style='padding-left:5px'/><button data-toggle='modal' data-target='#readingsModal' class='btn btn-outline-primary btn-sm' type='button' data-placement='top' title='Edit' onclick='loadGlucoseForm(" + val.ID + ")'><i class='fa fa-edit'></i></button></td>" +
+                                "</tr>";
+                   
+                    $('#tblGlucose tbody').append(tblBPRow);
+                });
+                
+                $('#tblGlucose .dataTables_empty').remove();
+                $('#tblGlucose').DataTable({
+                    "order":[[2,"desc"]]
+                });
+                
+            },
+            error: function (response) {/*
+                var r = jQuery.parseJSON(response.responseText);
+                alert("Message: " + r.Message);*/
+            }
+        });
+    }
+    function clearGlucoseForm(operationType)
+    {
+        $('#inputDate').val('');
+        $('#inputReadingHours').val('');
+        $('#inputReadingMinutes').val('');
+        //$('#inputReadingAMPM').val('');
+
+        $('#inputReading').val('');
+        $('#inputType').val('');
+        $('#inputDevice').val('');
+        $('#inputLastMeal').val('');
+        $('#inputMealTime').val('');
+
+        $('#inputMealTimeHours').val('');
+        $('#inputMealTimeMinutes').val('');
+        //$('#inputMealTimeAMPM').val('');
+
+        if (operationType == 'add')
+            $("#operationType").text('add');
+        else
+            $("#operationType").text('update');
+
+        //reset validation
+        $('#modalForm').removeClass("was-validated");
+    }
+    function loadGlucoseForm(rowId)
+    {   
+        setSelectedRowId(rowId);
+        //$("#operationType").text('update'); 
+
+        $.ajax({
+            type: "GET",
+            beforeSend: function(request){
+                request.setRequestHeader("Authorization",session_token);
+            },
+            url: "http://localhost:8081/api/v1/users/" + session_userId + "/glucose/readings/" + rowId,
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function (response) {
+                clearGlucoseForm('update');
+                $('#inputDate').val(response[0].READING_DATE);
+
+                var timeRaw=response[0].READING_TIME;                
+                var temp1=timeRaw.toString().split(":");
+                var temp2=temp1[1].toString().split(" ");
+                $('#inputReadingHours').val(temp1[0]);
+                $('#inputReadingMinutes').val(temp2[0]);
+                $('#inputReadingAMPM').val(temp2[1]);            
+                              
+                $('#inputReading').val(response[0].READING);
+                $('#inputType').val(response[0].TYPE);
+                $('#inputDevice').val(response[0].DEVICE);
+                $('#inputLastMeal').val(response[0].LASTMEAL);
+
+
+                timeRaw=response[0].LASTMEALTIME;                
+                temp1=timeRaw.toString().split(":");
+                temp2=temp1[1].toString().split(" ");
+                $('#inputMealTimeHours').val(temp1[0]);
+                $('#inputMealTimeMinutes').val(temp2[0]);
+                $('#inputMealTimeAMPM').val(temp2[1]);
+
+            },
+            error: function (response) {
+                alert('Technical Error: Unable to load record');
+            }
+        });        
+    }
+    function saveGlucoseData()
+    {       
+        var readingID = "";
+
+        if ($("#operationType").text()=="update")
+            readingID=$("#selectedRowId").text();
+        else
+            readingID="";
+
+        var date= $('#inputDate').val();
+        var readingTime= $('#inputReadingHours').val() + ':' + $('#inputReadingMinutes').val() + ' ' + $('#inputReadingAMPM').val();
+        var reading=$('#inputReading').val();
+        var type=$('#inputType').val();
+        var device=$('#inputDevice').val();
+        var lastMeal=$('#inputLastMeal').val();
+        var lastMealTime=$('#inputMealTimeHours').val() + ':' + $('#inputMealTimeMinutes').val() + ' ' + $('#inputMealTimeAMPM').val();
+
+        var bpData = {
+                      ID:readingID,
+                      SNO:"",
+                      READING_DATE:date, 
+                      READING_TIME:readingTime, 
+                      READING:reading, 
+                      TYPE:type, 
+                      DEVICE:device, 
+                      LASTMEAL:lastMeal, 
+                      LASTMEALTIME:lastMealTime };        
+
+            //console.log(JSON.stringify(bpData));
+
+        $.ajax({
+            type:"POST",
+            beforeSend: function(request){
+                request.setRequestHeader("Authorization",session_token);
+            },
+            url:"http://localhost:8081/api/v1/users/" + session_userId + "/glucose/readings",
+            data: JSON.stringify(bpData),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            crossDomain: false,
+            success: function(response){                
+                
+                setTimeout(function (){
+                    $('#tblGlucose').DataTable().destroy();
+                    $("#tblGlucose tbody").empty();                    
+                    loadGlucoseTable();
+                    $("#alertMessage").text('Record saved successfully.');
+                    $(".alert").css("display","block");
+                    createBarChart();
+                    hideModal();
+                }, 0000);
+            },
+            error: function (response){
+                alert('Technical Error: Unable to save');
+            }
+        });
+    }    
+    function hideModal()
+    {        
+        $("#readingsModal").removeClass("in");
+        $(".modal-backdrop").remove();
+        $("#readingsModal").hide();
+    }
+    </script>
+
+    <div class="container">      
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header alert-danger">
+            
+            <h4 class="modal-title">Confirmation</h4>
+          </div>
+          <div class="modal-body ">
+            <p>Are you sure you want to Delete the selected record ?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="deleteSelectedBPTableRow()">Yes</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="container">      
+    <div class="modal fade" id="logoutModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header alert-danger">
+            
+            <h4 class="modal-title">Confirmation</h4>
+          </div>
+          <div class="modal-body ">
+            <p>Are you sure you want to Logout ?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="terminateSession()">Yes</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+
+
+  <div class="container">      
+    <div class="modal fade" id="readingsModal" role="dialog" data-backdrop="static">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="alert alert-primary">
+            
+            <h4 class="modal-title">Glucose Data</h4>
+          </div>
+          <div class="modal-body">
+            <form id="modalForm" class="needs-validation" novalidate>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputDate">Date Time*</label>
+                    <input type="text" class="form-control" data-provide= "datepicker" id="inputDate" placeholder="Pick date" autoclose="true" autocomplete="off" readonly required style="background-color: white;">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputCity">Hour</label>
+                    <input type="number" min="1" max="12" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputReadingHours" placeholder="HH" autocomplete="off">
+                  </div>                  
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Minutes</label>
+                    <input type="number" min="1" max="60" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputReadingMinutes" placeholder="MM" autocomplete="off">
+                  </div>
+               
+                  <div class="form-group col-md-2">
+                    <label for="inputState">AM/PM</label>
+                    <select id="inputReadingAMPM" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>AM</option>
+                      <option>PM</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputSystolic">Reading*</label>
+                      <input type="number" min="1" max="260" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputReading" maxlength="3" autocomplete="off" required>
+                    </div>                    
+                    <div class="form-group col-md-6">
+                        <label for="inputState">Type*</label>
+                        <select id="inputType" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>Random</option>
+                          <option>Fasting</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputDevice">Device</label>
+                      <input type="text" class="form-control" id="inputDevice" maxlength="20" onkeypress="return /[0-9a-zA-Z \-_]/i.test(event.key)">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputLastMeal">Last Meal (12 hours ago for fasting)*</label>  
+                      <input type="text" class="form-control" id="inputLastMeal" maxlength="20" onkeypress="return /[0-9a-zA-Z \-_]/i.test(event.key)" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="inputCity">Meal Time</label>
+                        <input type="number" min="1" max="12" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputMealTimeHours" placeholder="HH" autocomplete="off">
+                      </div>                  
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">&nbsp;</label>
+                        <input type="number" min="1" max="60" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputMealTimeMinutes" placeholder="MM" autocomplete="off">
+                      </div>
+                   
+                      <div class="form-group col-md-2">
+                        <label for="inputState">&nbsp;</label>
+                        <select id="inputMealTimeAMPM" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </div>
+                    <div class="form-group col-md-6">
+                      
+                    </div>
+                </div>                
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" >Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-left: 2px;">Close</button>
+                  </div>
+              </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span id="selectedRowId"></span>
+  <span id="operationType"></span>
+ 
+</body>
+
+
+
+</html>

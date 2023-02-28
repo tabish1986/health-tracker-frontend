@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Health Watch</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+    
+
+    <!-- below 2 links commented and 4.4.1 version of bootstrap and its js added in below 24/2/2022 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <!-- this added for grid correction -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!-- this added for title bar search and icon correction -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    
+   
+
+</head>
+<style>
+    .scroll {
+  height:150px;
+  overflow-y: scroll;
+}
+</style>
+<body style="overflow: hidden;">     
+  
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>   
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <header class="topbar" data-navbarbg="skin5" style="height: 0px;">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">                  
+                    <a class="navbar-brand" href="summary-dashboard.html" >                        
+                        <b class="logo-icon">                            
+                            <img src="plugins/images/logo-icon.png" alt="homepage" />
+                        </b>                       
+                        <span class="logo-text">                            
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
+                    </a>                   
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+               
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5" style="background-color: cornflowerblue;">                 
+                   
+                    
+                </div>
+            </nav>
+        </header>
+       
+        <aside class="left-sidebar" data-sidebarbg="skin6">            
+            <div class="scroll-sidebar">               
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item pt-2" style="margin-bottom: 5px;">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link">
+                                <i class="fas fa-user-circle" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: cornflowerblue; font-size:medium; color: rgb(40, 206, 128); " id="userTitle">Welcome, User</span>
+                            </a>
+                        </li>                       
+                        <li class="sidebar-item pt-2" style="background-color: rgba(179, 213, 243, 0.846);">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="summary-dashboard.html"
+                                aria-expanded="false">
+                                <i class="fas fa-th-large" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color:black; font-size:medium; ">Summary Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="bloodpressure-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">BP Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="glucose-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Glucose Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pulse-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Pulse Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="respiration-dashboard.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-tv" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Respiration Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                                aria-expanded="false">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium; ">Profile</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="changePassword.html"
+                                aria-expanded="false">
+                                <i class="fas fa-edit" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium;">Change Password</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item" data-toggle='modal' data-target='#myModal' type="button">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false">
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                                <span class="hide-menu" style="color: black; font-size: medium;">Logout</span>
+                            </a>
+                        </li>                                                            
+                    </ul>
+
+                </nav>                
+            </div>            
+        </aside>
+        
+        <div class="page-wrapper">
+            
+            <div class="page-breadcrumb" style="background-color: rgba(179, 213, 243, 0.846);">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Summary Dashboard</h4>
+                    </div>                    
+                </div>                
+            </div>
+            
+            <div class="container-fluid scroll" style="height: 680px;">   
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Blood Pressure</h3>
+                            <div>
+                                <canvas id="bpgraph" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Glucose</h3>
+                            <div>
+                                <canvas id="sugargraph" ></canvas>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Pulse</h3>
+                            <div>
+                                <canvas id="pulsegraph" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="white-box analytics-info">
+                            <h3 class="box-title">Respiration</h3>
+                            <div>
+                                <canvas id="respirationgraph" ></canvas>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>        
+                
+            </div>
+           
+            <footer class="footer text-center"> 2022 © University of Derby, powered by Tabish & Pragati</footer>
+           
+        </div>       
+    </div>   
+    
+    
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
+
+    <!-- Customization Begins Here-->
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
+    
+    <!-- below commented and bootstrap version 4.4.1 added -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type= "text/javascript" src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="js/logout.js"></script>
+
+    <script>        
+
+        $(document).ready(function() { 
+            loadUserTitle();
+            createBPGraph();
+            createGlucoseGraph();
+            createRespirationGraph();
+            createPulseGraph();
+        });   
+
+        var session_userId = window.sessionStorage.getItem("session_userid");
+        var session_token = "Bearer " + window.sessionStorage.getItem("seession_token");
+        
+        function loadUserTitle()
+        {
+            $('#userTitle').text("Welcome, " + window.sessionStorage.getItem("seession_name"));
+        }
+
+        function createBPGraph() {
+            $.ajax({
+                type: "GET",
+                beforeSend: function(request){
+                    request.setRequestHeader("Authorization",session_token);
+                },
+                url: "http://localhost:8081/api/v1/users/" + session_userId + "/bloodpressure/graphStats",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                crossDomain: false,
+                success: function (response) {
+                 
+                    var xDays = response.XAxis;
+                    var yDIA = response.YAxis_SYS;
+                    var ySYS= response.YAXIS_DYS;
+
+                    new Chart("bpgraph", {
+                    type: "line",
+                    data: {
+                            labels: xDays,            
+                            datasets: 
+                            [
+                            {
+                            label: 'Systolic',
+                            data: yDIA,
+                            borderColor: "blue",
+                            fill: false
+                            },
+                            {
+                            label: 'Diastolic',
+                            data: ySYS,
+                            borderColor: "orange",
+                            fill: false
+                            }
+                            ]
+                    },
+                    options: {
+                        legend: {display: true},
+                        scales : {
+                        yAxes: [{
+                            ticks : {
+                                beginAtZero: false,
+                                steps: 5,
+                                stepValue: 70,
+                                min: 40,                                
+                                max: 200
+                            }
+                        }]
+                        }
+                    }
+                    });
+                    
+                },
+                error: function (response) {                    
+                    alert('Technical Error: Unable to draw BP Graph');
+                }
+            });
+        }
+        function createGlucoseGraph() {
+
+            $.ajax({
+                type: "GET",
+                beforeSend: function(request){
+                    request.setRequestHeader("Authorization",session_token);
+                },
+                url: "http://localhost:8081/api/v1/users/" + session_userId + "/glucose/graphStats",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                crossDomain: false,
+                success: function (response) {
+
+                    var xDays = response.XAxis;
+                    var yFasting = response.YAxis_FASTING;
+                    var yRandom= response.YAXIS_RANDOM;
+
+                    new Chart("sugargraph", {
+                    type: "bar",
+                    data: {
+                            labels: xDays,            
+                            datasets: 
+                            [
+                            {
+                            label: 'Fasting',
+                            data: yFasting,
+                            backgroundColor: "grey",
+                            fill: false
+                            },
+                            {
+                            label: 'Random',
+                            data: yRandom,
+                            backgroundColor: "orange",
+                            fill: false
+                            }
+                            ]
+                    },
+                    options: {
+                        legend: {display: true}
+                    }
+                    });
+                    
+                },
+                error: function (response) {
+                    alert('Technical Error: Unable to draw Glucose Graph');
+                }
+            });
+        }
+        function createRespirationGraph() {
+
+            $.ajax({
+                type: "GET",
+                beforeSend: function(request){
+                    request.setRequestHeader("Authorization",session_token);
+                },
+                url: "http://localhost:8081/api/v1/users/" + session_userId + "/respiration/graphStats",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                crossDomain: false,
+                success: function (response) {
+
+                    var xDays = response.XAxis;
+                    var yAxis = response.YAxis;
+                    //var yRandom= response.YAXIS_RANDOM;
+
+                    new Chart("respirationgraph", {
+                    type: "line",
+                    data: {
+                            labels: xDays,            
+                            datasets: 
+                            [
+                                {
+                                    label: 'Respiration',
+                                    data: yAxis,
+                                    backgroundColor: "red",
+                                    borderColor: "blue",
+                                    fill: false
+                                }
+                            ]
+                    },
+                    options: {
+                        legend: {display: true},
+                        scales : {
+                            yAxes: [{
+                                ticks : {
+                                    beginAtZero: false,
+                                    steps: 5,
+                                    stepValue: 70,
+                                    min: 60,                                
+                                    max: 100
+                                }
+                            }]
+                        }            
+                    }
+                    });
+                    
+                },
+                error: function (response) {
+                    alert('Technical Error: Unable to draw Respiration Graph');
+                }
+            });
+        }
+        function createPulseGraph() {
+
+            $.ajax({
+                type: "GET",
+                beforeSend: function(request){
+                    request.setRequestHeader("Authorization",session_token);
+                },
+                url: "http://localhost:8081/api/v1/users/" + session_userId + "/pulse/graphStats",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                crossDomain: false,
+                success: function (response) {
+
+                    var xDays = response.XAxis;
+                    var yAxis = response.YAxis;                
+
+                    new Chart("pulsegraph", {
+                    type: "line",
+                    data: {
+                            labels: xDays,            
+                            datasets: 
+                            [
+                                {
+                                    label: 'Pulse',
+                                    data: yAxis,
+                                    backgroundColor: "blue",
+                                    borderColor: "orange",
+                                    fill: false
+                                }
+                            ]
+                    },
+                    options: {
+                        legend: {display: true},
+                        scales : {
+                            yAxes: [{
+                                ticks : {
+                                    beginAtZero: false,
+                                    steps: 5,
+                                    stepValue: 70,
+                                    min: 40,                                
+                                    max: 160
+                                }
+                            }]
+                        }            
+                    }
+                    });
+                    
+                },
+                error: function (response) {
+                    alert('Technical Error: Unable to draw Pulse Graph');
+                }
+            });
+        }
+
+        function logout()
+        {
+            if (confirm('Press Ok to logout.') == true)
+                window.location.href='index.html';
+        }
+    </script>
+
+    <div class="container">      
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header alert-danger">
+            
+            <h4 class="modal-title">Confirmation</h4>
+          </div>
+          <div class="modal-body ">
+            <p>Are you sure you want to Logout ?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="terminateSession()">Yes</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+
+
+  <div class="container">      
+    <div class="modal fade" id="readingsModal" role="dialog" data-backdrop="static">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="alert alert-primary">
+            
+            <h4 class="modal-title">Blood Pressure Data</h4>
+          </div>
+          <div class="modal-body ">
+            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputDate">Date Time</label>
+                    <input type="text" class="form-control" data-provide= "datepicker" id="inputDate" placeholder="Enter date" autoclose="true">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputCity">Hour</label>
+                    <input type="number" min="1" max="12" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputReadingHours" placeholder="HH">
+                  </div>                  
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Minutes</label>
+                    <input type="number" min="1" max="60" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputReadingMinutes" placeholder="MM">
+                  </div>
+               
+                  <div class="form-group col-md-2">
+                    <label for="inputState">AM/PM</label>
+                    <select id="inputReadingAMPM" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>AM</option>
+                      <option>PM</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputSystolic">Systolic</label>
+                      <input type="number" min="0" max="200" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputSystolic" placeholder="Systolic reading" maxlength="3">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputDiastolic">Diastolic</label>  
+                      <input type="number" min="0" max="200" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputDiastolic" placeholder="Diastolic reading" maxlength="3">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputDevice">Device</label>
+                      <input type="text" class="form-control" id="inputDevice" placeholder="Device name" maxlength="20" onkeypress="return /[0-9a-zA-Z \-_]/i.test(event.key)">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputLastMeal">Last Meal</label>  
+                      <input type="text" class="form-control" id="inputLastMeal" placeholder="Last Meal" maxlength="20" onkeypress="return /[0-9a-zA-Z \-_]/i.test(event.key)">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label for="inputCity">Meal Time</label>
+                        <input type="number" min="1" max="12" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputMealTimeHours" placeholder="HH">
+                      </div>                  
+                      <div class="form-group col-md-2">
+                        <label for="inputZip">&nbsp;</label>
+                        <input type="number" min="1" max="60" step="1" oninput="validity.valid||(value='');" class="form-control" id="inputMealTimeMinutes" placeholder="MM">
+                      </div>
+                   
+                      <div class="form-group col-md-2">
+                        <label for="inputState">&nbsp;</label>
+                        <select id="inputMealTimeAMPM" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>AM</option>
+                          <option>PM</option>
+                        </select>
+                      </div>
+                    <div class="form-group col-md-6">
+                      
+                    </div>
+                </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="saveBPData()">Save</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal" style="margin-left: 2px;">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span id="selectedRowId"/>
+  <span id="operationType"/>
+ 
+</body>
+</html>
